@@ -31,7 +31,7 @@ services:
       - .:/usr/app
     environment:
       - SERVER_PORT=${SERVER_PORT}
-      - DATABASE_HOST=mongo
+      - DATABASE_HOST=database
       - DATABASE_USER=${DATABASE_USER}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_NAME=${DATABASE_NAME}
