@@ -7,9 +7,9 @@ export default class ProductCategoryDeleteUseCase extends AbstractUseCase {
 		super(productCategoryRepository);
 	}
 
-	public async execute(id: number): Promise<void | null> {
-		if (!id) {
-			this.setError({ message: '"id" is required' });
+	public async execute(id: number | null): Promise<void | null> {
+		if (!id || isNaN(Number(id))) {
+			this.setError({ message: 'The id must be numeric' });
 			return null;
 		}
 
