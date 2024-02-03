@@ -28,7 +28,7 @@ export default class ProductInMemoryRepository implements ProductRepository {
 
 	public async listByCategory(category: ProductCategory): Promise<Product[]> {
 		return this.products.filter((product) => {
-			return product.category == category;
+			return product.category.id === category.id;
 		});
 	}
 

@@ -24,7 +24,7 @@ export default class ProductListByCategoryUseCase extends AbstractUseCase {
 
 		const products = await this.repository.listByCategory(category);
 
-		if (!products) {
+		if (!products || products.length == 0) {
 			this.setError({ message: 'Products not found for informed category!' });
 		}
 
